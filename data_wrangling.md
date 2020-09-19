@@ -208,3 +208,11 @@ pulse_df
     ## # … with 1,077 more rows
 
 Take note of names and clean.
+
+## Export data
+
+export the mlb sub-table
+
+``` r
+write_csv(mlb_df2, "./data_import_examples/mlb_subtable.csv")
+```
