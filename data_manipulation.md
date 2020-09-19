@@ -389,3 +389,5 @@ mutate(
     ## 10 con8  #3/5/2/2/95         28.5        NA            20               8
     ## # … with 39 more rows, and 3 more variables: pups_dead_birth <dbl>,
     ## #   pups_survive <dbl>, wt_gain <dbl>
+
+## Arrange
