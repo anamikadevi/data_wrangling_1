@@ -13,11 +13,33 @@ Read in the litters dataset
 
 ```{r}
 litters_df = read_csv("./data_import_examples/FAS_litters.csv")
-litter_df = janitor::clean_names(litters_df)
+litters_df = janitor::clean_names(litters_df)
 ```
 
 
 #### Look at the data
+
+Printing in the console
+```{r}
+litters_df
+```
+
+```{r}
+head(litters_df)
+tail(litters_df)
+```
+
+```{r}
+skimr::skim(litters_df)
+```
+
+alternatively: enter in console
+View(litters_df)
+
+
+
+
+
 
 
 
