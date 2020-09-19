@@ -3,6 +3,8 @@ title: "Data Import"
 output: github_document
 ---
 
+## CSV FILES
+
 ```{r tidyverse, message = FALSE}
 library(tidyverse)
 ```
@@ -47,6 +49,38 @@ litters_df2 = read_csv("./data_import_examples/FAS_litters.csv",
 ```
 
 
+## EXCEL FILES
+
+Read in an excel file
+
+```{r}
+library(readxl)
+mlb_df = read_excel("./data_import_examples/mlb11.xlsx")
+mlb_df
+```
+
+#### Excel specific options
+
+?read_excel
+
+Take note of sheet and range options. 
+
+```{r}
+mlb_df2 = read_excel("./data_import_examples/mlb11.xlsx", range = "A1:F7")
+```
+
+
+## SAS FILES
+
+Read in a SAS file
+
+```{r}
+library(haven)
+pulse_df = read_sas("./data_import_examples/public_pulse_data.sas7bdat")
+pulse_df 
+```
+
+Take note of names and clean.
 
 
 
