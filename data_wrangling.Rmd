@@ -36,7 +36,15 @@ skimr::skim(litters_df)
 alternatively: enter in console
 View(litters_df)
 
+#### Options to read_csv
+?read_csv
 
+```{r}
+litters_df2 = read_csv("./data_import_examples/FAS_litters.csv", 
+                      skip = 10, 
+                      col_names = FALSE,
+                      na = c("", "NA", ".", 999))
+```
 
 
 

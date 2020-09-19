@@ -120,3 +120,26 @@ Data summary
 | pups\_survive     |          0 |           1.00 |  6.41 | 2.05 |  1.0 |  5.00 |  7.00 |  8.00 |  9.0 | ▁▃▂▇▇ |
 
 alternatively: enter in console View(litters\_df)
+
+#### Options to read\_csv
+
+?read\_csv
+
+``` r
+litters_df2 = read_csv("./data_import_examples/FAS_litters.csv", 
+                      skip = 10, 
+                      col_names = FALSE,
+                      na = c("", "NA", ".", 999))
+```
+
+    ## Parsed with column specification:
+    ## cols(
+    ##   X1 = col_character(),
+    ##   X2 = col_character(),
+    ##   X3 = col_double(),
+    ##   X4 = col_double(),
+    ##   X5 = col_double(),
+    ##   X6 = col_double(),
+    ##   X7 = col_double(),
+    ##   X8 = col_double()
+    ## )
