@@ -4,3 +4,42 @@ Tidy Data
 ``` r
 library(tidyverse)
 ```
+
+## pivot\_longer
+
+Load the PULSE data
+
+``` r
+pulse_data =
+    haven::read_sas("./data_import_examples/public_pulse_data.sas7bdat") %>% 
+    janitor::clean_names()
+```
+
+Wide format to long format
+
+``` r
+pulse_data_tidy = 
+    pulse_data %>% 
+    pivot_longer(
+      bdi_score_bl:bdi_score_12m,
+      names_to = "visit",
+      names_prefix = "bdi_score_",
+      values_to = "bdi"
+    )
+```
+
+rewrite, combine, and extend
+
+``` r
+pulse_data =
+    haven::read_sas("./data_import_examples/public_pulse_data.sas7bdat") %>% 
+    janitor::clean_names() %>% 
+    pivot_longer(
+      bdi_score_bl:bdi_score_12m,
+      names_to = "visit",
+      names_prefix = "bdi_score_",
+      values_to = "bdi"
+    ) %>%
+    relocate(id, visit) %>% 
+    mutate(visit = recode(visit, "bl" = "00m"))
+```
